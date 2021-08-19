@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleBook from 'SingleBook.js';
+import SingleBook from './SingleBook';
 
 const Books = () => {
   const booksArray = [1, 2, 3];
