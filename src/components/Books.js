@@ -7,6 +7,7 @@ import { createBook } from '../redux/books/books_creators';
 
 const Books = () => {
   const dispatch = useDispatch();
+
   const books = booksArray.map((book) => <SingleBook book={book} key={book.id} />);
 
   const addBookToStore = (book) => {

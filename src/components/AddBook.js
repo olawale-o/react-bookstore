@@ -28,7 +28,7 @@ const AddBook = ({ addBookToStore }) => {
     <div className="AddBook">
       <h2>ADD NEW BOOK</h2>
       <div className="addbook-form">
-        <input type="text" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} />
+        <input type="text" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} required />
         <select name="category" value={category} onChange={handleChangeCategory}>
           <option value="">Category</option>
           <option value="Action">Action</option>
