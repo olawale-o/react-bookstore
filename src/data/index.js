@@ -1,6 +1,6 @@
 const booksArray = [
   {
-    id: 1,
+    id: Math.floor(Math.random() * 100),
     categories: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
@@ -9,7 +9,7 @@ const booksArray = [
     chapterTitle: '',
   },
   {
-    id: 2,
+    id: Math.floor(Math.random() * 100),
     categories: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
@@ -18,7 +18,7 @@ const booksArray = [
     chapterTitle: 'A Lesson Learned',
   },
   {
-    id: 3,
+    id: Math.floor(Math.random() * 100),
     categories: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',

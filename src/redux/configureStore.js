@@ -3,6 +3,6 @@ import logger from './logger';
 import booksReducer from './books/books';
 
 const reducer = combineReducers({ books: booksReducer });
-const store = createStore(reducer, applyMiddleware(logger));
+const configureStore = createStore(reducer, applyMiddleware(logger));
 
-export default store;
+export default configureStore;
