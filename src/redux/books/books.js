@@ -6,7 +6,7 @@ export default function booksReducer(state = initialState, action) {
     case CREATE_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK: {
-      const filteredBooks = state.booksReducer.filteredBooks(({ id }) => action.payload !== id);
+      const filteredBooks = state.filter(({ id }) => action.payload !== id);
       return filteredBooks;
     }
     default:
