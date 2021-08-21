@@ -22,5 +22,5 @@ const BookButtons = ({ id }) => {
 export default BookButtons;
 
 BookButtons.propTypes = {
-  id: PropType.number.isRequired,
+  id: PropType.string.isRequired,
 };

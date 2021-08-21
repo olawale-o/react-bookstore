@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { postBook } from '../utils/utils';
+import { createBook } from '../redux/books/books_creators';
+import { getStorage } from '../storage/storage';
 
-const AddBook = ({ addBookToStore }) => {
+const AddBook = () => {
+  const appId = getStorage();
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
@@ -15,13 +21,23 @@ const AddBook = ({ addBookToStore }) => {
     setCategory(event.target.value);
   };
 
-  const onAddBookToStore = () => {
-    const newBook = {
-      id: Math.floor(Math.random() * 100),
+  const onAddBookToStore = async () => {
+    const book = {
+      item_id: uuidv4(),
       title,
       category,
     };
-    addBookToStore(newBook);
+    const newBook = {
+      ...book,
+      author: 'Author',
+      percentProgress: '0',
+      currentChapter: 'Introduction',
+      chapterTitle: '',
+    };
+    const response = await postBook(appId, newBook);
+    if (response) {
+      dispatch(createBook(newBook));
+    }
   };
 
   return (
@@ -42,7 +58,3 @@ const AddBook = ({ addBookToStore }) => {
 };
 
 export default AddBook;
-
-AddBook.propTypes = {
-  addBookToStore: PropTypes.func.isRequired,
-};
