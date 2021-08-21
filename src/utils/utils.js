@@ -13,11 +13,11 @@ export const postBook = async (appId, data) => {
   const END_POINT = `apps/${appId}/books/`;
   const URI = `${BASE_URL}${END_POINT}`;
   const response = await post(URI, data);
-  return response.json();
+  return response.ok;
 };
 
 export const fetchAllBooks = async (appId) => {
-  const END_POINT = `apps/${appId}/books/`;
+  const END_POINT = `apps/${appId}/books`;
   const URI = `${BASE_URL}${END_POINT}`;
   const response = await get(URI);
   return response.json();
