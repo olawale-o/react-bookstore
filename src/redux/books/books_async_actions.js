@@ -1,6 +1,8 @@
-import { createApp, fetchAllBooks, postBook } from '../../utils/utils';
 import {
-  createBook, loadBooks, noBooks,
+  createApp, deleteBook, fetchAllBooks, postBook,
+} from '../../utils/utils';
+import {
+  createBook, loadBooks, noBooks, removeBook,
 } from './books_creators';
 import { getStorage, setStorage } from '../../storage/storage';
 
@@ -37,6 +39,19 @@ export const addBook = (appId, book) => (
     const response = await postBook(appId, book);
     if (response) {
       dispatch(createBook(book));
+    }
+  }
+);
+
+export const deleteSingleBook = (appId, id) => (
+  async function deleteSingleBook(dispatch) {
+    if (id.startsWith('test')) {
+      dispatch(removeBook(id));
+    } else {
+      const response = await deleteBook(appId, id);
+      if (response) {
+        dispatch(removeBook(id));
+      }
     }
   }
 );
