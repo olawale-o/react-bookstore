@@ -19,8 +19,8 @@ const AddBook = () => {
     event.preventDefault();
     setCategory(event.target.value);
   };
-
-  const onAddBookToStore = async () => {
+  const onAddBookToStore = async (event) => {
+    event.preventDefault();
     const book = {
       item_id: uuidv4(),
       title,
@@ -34,20 +34,24 @@ const AddBook = () => {
       chapterTitle: '',
     };
     dispatch(addBook(appId, newBook));
+    setTitle('');
+    setCategory('');
   };
 
   return (
     <div className="AddBook">
       <h2>ADD NEW BOOK</h2>
       <div className="addbook-form">
-        <input type="text" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} required />
-        <select name="category" value={category} onChange={handleChangeCategory}>
-          <option value="">Category</option>
-          <option value="Action">Action</option>
-          <option value="science-fiction">Science Fiction</option>
-          <option value="economy">Economy</option>
-        </select>
-        <button type="button" onClick={() => onAddBookToStore()}>ADD BOOK</button>
+        <form onSubmit={onAddBookToStore}>
+          <input type="text" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} required />
+          <select name="category" value={category} onChange={handleChangeCategory} required>
+            <option value="">Category</option>
+            <option value="Action">Action</option>
+            <option value="science-fiction">Science Fiction</option>
+            <option value="economy">Economy</option>
+          </select>
+          <button type="submit">ADD BOOK</button>
+        </form>
       </div>
     </div>
   );

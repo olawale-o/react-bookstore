@@ -7,7 +7,6 @@ import AddBook from './AddBook';
 const Books = () => {
   const booksArray = useSelector(booksSelector);
   const books = booksArray.map((book) => <SingleBook book={book} key={book.item_id} />);
-
   return (
     <div className="Books">
       <div className="book-lists">
