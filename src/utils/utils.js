@@ -1,5 +1,5 @@
-import { post
- } from "../api/api";
+import { get, post } from '../api/api';
+
 const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/';
 
 export const createApp = async () => {
@@ -17,7 +17,7 @@ export const postBook = async (appId, data) => {
 };
 
 export const fetchAllBooks = async (appId) => {
-  const END_POINT = `apps/${appId}/books`;
+  const END_POINT = `apps/${appId}/books/`;
   const URI = `${BASE_URL}${END_POINT}`;
   const response = await get(URI);
   return response.json();
