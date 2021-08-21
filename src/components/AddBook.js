@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { createBook } from '../redux/books/books_creators';
 
-const AddBook = ({ addBookToStore }) => {
+const AddBook = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
@@ -16,12 +18,19 @@ const AddBook = ({ addBookToStore }) => {
   };
 
   const onAddBookToStore = () => {
-    const newBook = {
+    const book = {
       id: Math.floor(Math.random() * 100),
       title,
       category,
     };
-    addBookToStore(newBook);
+    const newBook = {
+      ...book,
+      author: 'Author',
+      percentProgress: '0',
+      currentChapter: 'Introduction',
+      chapterTitle: '',
+    };
+    dispatch(createBook(newBook));
   };
 
   return (
@@ -42,7 +51,3 @@ const AddBook = ({ addBookToStore }) => {
 };
 
 export default AddBook;
-
-AddBook.propTypes = {
-  addBookToStore: PropTypes.func.isRequired,
-};
