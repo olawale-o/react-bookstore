@@ -1,4 +1,6 @@
-import { CREATE_BOOK, REMOVE_BOOK, LOAD_BOOKS } from './books_action_types';
+import {
+  CREATE_BOOK, REMOVE_BOOK, LOAD_BOOKS, NO_BOOKS,
+} from './books_action_types';
 
 export const createBook = (payload) => ({
   type: CREATE_BOOK,
@@ -12,5 +14,10 @@ export const removeBook = (payload) => ({
 
 export const loadBooks = (payload) => ({
   type: LOAD_BOOKS,
+  payload,
+});
+
+export const noBooks = (payload) => ({
+  type: NO_BOOKS,
   payload,
 });
