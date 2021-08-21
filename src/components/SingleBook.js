@@ -36,7 +36,7 @@ export default SingleBook;
 
 SingleBook.propTypes = {
   book: PropType.shape({
-    id: PropType.number.isRequired,
+    id: PropType.string.isRequired,
     category: PropType.string.isRequired,
     title: PropType.string.isRequired,
     author: PropType.string.isRequired,

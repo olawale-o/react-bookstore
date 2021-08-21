@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const booksArray = [
   {
-    id: Math.floor(Math.random() * 100),
+    id: `test-${uuidv4()}`,
     category: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
@@ -9,7 +11,7 @@ const booksArray = [
     chapterTitle: '',
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: `test-${uuidv4()}`,
     category: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
@@ -18,7 +20,7 @@ const booksArray = [
     chapterTitle: 'A Lesson Learned',
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: `test-${uuidv4()}`,
     category: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',

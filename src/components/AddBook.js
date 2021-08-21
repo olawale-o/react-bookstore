@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { createBook } from '../redux/books/books_creators';
 
 const AddBook = () => {
@@ -19,7 +20,7 @@ const AddBook = () => {
 
   const onAddBookToStore = () => {
     const book = {
-      id: Math.floor(Math.random() * 100),
+      id: `test-${uuidv4()}`,
       title,
       category,
     };
