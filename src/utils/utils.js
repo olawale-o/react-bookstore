@@ -15,3 +15,10 @@ export const postBook = async (appId, data) => {
   const response = await post(URI, data);
   return response.json();
 };
+
+export const fetchAllBooks = async (appId) => {
+  const END_POINT = `apps/${appId}/books`;
+  const URI = `${BASE_URL}${END_POINT}`;
+  const response = await get(URI);
+  return response.json();
+};
