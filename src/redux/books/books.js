@@ -8,7 +8,7 @@ export default function booksReducer(state = initialState, action) {
     case CREATE_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK: {
-      const filteredBooks = state.filter(({ id }) => action.payload !== id);
+      const filteredBooks = state.filter((book) => action.payload !== book.item_id);
       return filteredBooks;
     }
     case LOAD_BOOKS:

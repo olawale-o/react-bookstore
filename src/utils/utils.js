@@ -22,3 +22,11 @@ export const fetchAllBooks = async (appId) => {
   const response = await get(URI);
   return response.json();
 };
+
+export const deleteBook = async (appId, id) => {
+  const END_POINT = `apps/${appId}/books/${id}`;
+  const URI = `${BASE_URL}${END_POINT}`;
+  const response = await post(URI, { item_id: id }, 'DELETE');
+  console.log(response);
+  return response.ok;
+};

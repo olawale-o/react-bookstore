@@ -27,5 +27,3 @@ export default async function getBooks(dispatch) {
     dispatch(noBooks(error));
   }
 }
-// SIAQ1hMBeF0gVl5UwZy5
-// qqNRial6NCX6XH6QuDRG
