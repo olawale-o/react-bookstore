@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { postBook } from '../utils/utils';
-import { createBook } from '../redux/books/books_creators';
 import { getStorage } from '../storage/storage';
+import { addBook } from '../redux/books/books_async_actions';
 
 const AddBook = () => {
   const appId = getStorage();
@@ -34,10 +33,7 @@ const AddBook = () => {
       currentChapter: 'Introduction',
       chapterTitle: '',
     };
-    const response = await postBook(appId, newBook);
-    if (response) {
-      dispatch(createBook(newBook));
-    }
+    dispatch(addBook(appId, newBook));
   };
 
   return (
