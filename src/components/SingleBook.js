@@ -5,7 +5,7 @@ const SingleBook = ({ book }) => (
   <div className="Book">
     <div className="book-summary">
       <span className="book-category">{book.categories}</span>
-      <h4 className="book-title">{book.categories.title}</h4>
+      <h4 className="book-title">{book.title}</h4>
       <a href="/#">{book.author}</a>
       <ul className="book-modify">
         <li>
