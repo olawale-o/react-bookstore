@@ -1,28 +1,30 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const booksArray = [
   {
-    id: 1,
+    id: `test-${uuidv4()}`,
     category: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
-    completed: '64',
+    percentProgress: '64',
     currentChapter: 'Chapter 17',
     chapterTitle: '',
   },
   {
-    id: 2,
+    id: `test-${uuidv4()}`,
     category: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
-    completed: '8',
+    percentProgress: '8',
     currentChapter: 'Chapter 3',
     chapterTitle: 'A Lesson Learned',
   },
   {
-    id: 3,
+    id: `test-${uuidv4()}`,
     category: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
-    completed: '0',
+    percentProgress: '0',
     currentChapter: '',
     chapterTitle: 'Introduction',
   },

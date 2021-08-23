@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import BookButtons from './BookButtons';
 
 const SingleBook = ({ book }) => (
   <div className="Book">
@@ -7,23 +8,13 @@ const SingleBook = ({ book }) => (
       <span className="book-category">{book.category}</span>
       <h4 className="book-title">{book.title}</h4>
       <a href="/#">{book.author}</a>
-      <ul className="book-modify">
-        <li>
-          <a href="/#">Comments</a>
-        </li>
-        <li>
-          <a href="/#">Remove</a>
-        </li>
-        <li>
-          <a href="/#">Edit</a>
-        </li>
-      </ul>
+      <BookButtons id={book.id} />
     </div>
     <div className="book-progress">
       <div className="book-progress__indicator"> </div>
       <div className="book-progress__level">
         <div className="book-progress__level-percentage">
-          {book.completed}
+          {book.percentProgress}
           %
         </div>
         <div className="book-progress__level-status">Completed</div>
@@ -45,11 +36,11 @@ export default SingleBook;
 
 SingleBook.propTypes = {
   book: PropType.shape({
-    id: PropType.number.isRequired,
+    id: PropType.string.isRequired,
     category: PropType.string.isRequired,
     title: PropType.string.isRequired,
     author: PropType.string.isRequired,
-    completed: PropType.string.isRequired,
+    percentProgress: PropType.string.isRequired,
     currentChapter: PropType.string,
     chapterTitle: PropType.string,
   }).isRequired,

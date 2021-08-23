@@ -1,10 +1,13 @@
 import React from 'react';
-import booksArray from '../data/index';
+import { useSelector } from 'react-redux';
+import booksSelector from '../redux/books/booksSelector';
 import SingleBook from './SingleBook';
 import AddBook from './AddBook';
 
 const Books = () => {
+  const booksArray = useSelector(booksSelector);
   const books = booksArray.map((book) => <SingleBook book={book} key={book.id} />);
+
   return (
     <div className="Books">
       <div className="book-lists">
