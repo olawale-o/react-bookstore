@@ -1,7 +1,21 @@
-import initialState from './books_state';
-import { CREATE_BOOK, REMOVE_BOOK } from './books_action_types';
+import booksArray from '../../data';
 
-export default function booksReducer(state = initialState, action) {
+export const CREATE_BOOK = 'bookStore/books/CREATEBOOK';
+export const REMOVE_BOOK = 'bookStore/books/REMOVEBOOK';
+
+const initialState = booksArray;
+
+export const createBook = (payload) => ({
+  type: CREATE_BOOK,
+  payload,
+});
+
+export const removeBook = (payload) => ({
+  type: REMOVE_BOOK,
+  payload,
+});
+
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.payload];
@@ -12,4 +26,6 @@ export default function booksReducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default booksReducer;
