@@ -3,7 +3,7 @@ import {
 } from '../../utils/utils';
 import {
   createBook, loadBooks, noBooks, removeBook,
-} from './books_creators';
+} from './books';
 import { getStorage, setStorage } from '../../storage/storage';
 
 export const getBooks = () => (

@@ -2,6 +2,8 @@ import booksArray from '../../data';
 
 export const CREATE_BOOK = 'bookStore/books/CREATEBOOK';
 export const REMOVE_BOOK = 'bookStore/books/REMOVEBOOK';
+export const LOAD_BOOKS = 'bookStore/books/LOADBOOKS';
+export const NO_BOOKS = 'bookStore/books/NOBOOKS';
 
 const initialState = booksArray;
 
@@ -12,6 +14,16 @@ export const createBook = (payload) => ({
 
 export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
+  payload,
+});
+
+export const loadBooks = (payload) => ({
+  type: LOAD_BOOKS,
+  payload,
+});
+
+export const noBooks = (payload) => ({
+  type: NO_BOOKS,
   payload,
 });
 
