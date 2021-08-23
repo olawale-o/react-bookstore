@@ -8,7 +8,7 @@ const SingleBook = ({ book }) => (
       <span className="book-category">{book.category}</span>
       <h4 className="book-title">{book.title}</h4>
       <a href="/#">{book.author}</a>
-      <BookButtons id={book.id} />
+      <BookButtons id={book.item_id} />
     </div>
     <div className="book-progress">
       <div className="book-progress__indicator"> </div>
@@ -36,7 +36,7 @@ export default SingleBook;
 
 SingleBook.propTypes = {
   book: PropType.shape({
-    id: PropType.string.isRequired,
+    item_id: PropType.string.isRequired,
     category: PropType.string.isRequired,
     title: PropType.string.isRequired,
     author: PropType.string.isRequired,

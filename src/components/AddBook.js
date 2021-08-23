@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { createBook } from '../redux/books/books';
+import { getStorage } from '../storage/storage';
+import { addBook } from '../redux/books/books_async_actions';
 
 const AddBook = () => {
+  const appId = getStorage();
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -17,11 +19,10 @@ const AddBook = () => {
     event.preventDefault();
     setCategory(event.target.value);
   };
-
-  const onAddBookToStore = (event) => {
+  const onAddBookToStore = async (event) => {
     event.preventDefault();
     const book = {
-      id: `test-${uuidv4()}`,
+      item_id: uuidv4(),
       title,
       category,
     };
@@ -32,7 +33,7 @@ const AddBook = () => {
       currentChapter: 'Introduction',
       chapterTitle: '',
     };
-    dispatch(createBook(newBook));
+    dispatch(addBook(appId, newBook));
     setTitle('');
     setCategory('');
   };

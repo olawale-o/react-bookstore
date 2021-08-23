@@ -6,9 +6,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
+import { getBooks } from './redux/books/books_async_actions';
 
 const store = configureStore;
-
+store.dispatch(getBooks());
 ReactDOM.render(
   <React.StrictMode>
     <Router>
