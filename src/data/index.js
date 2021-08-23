@@ -1,7 +1,7 @@
 const booksArray = [
   {
     id: 1,
-    categories: 'Action',
+    category: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
     completed: '64',
@@ -10,7 +10,7 @@ const booksArray = [
   },
   {
     id: 2,
-    categories: 'Science Fiction',
+    category: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
     completed: '8',
@@ -19,7 +19,7 @@ const booksArray = [
   },
   {
     id: 3,
-    categories: 'Economy',
+    category: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
     completed: '0',

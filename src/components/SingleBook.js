@@ -4,7 +4,7 @@ import PropType from 'prop-types';
 const SingleBook = ({ book }) => (
   <div className="Book">
     <div className="book-summary">
-      <span className="book-category">{book.categories}</span>
+      <span className="book-category">{book.category}</span>
       <h4 className="book-title">{book.title}</h4>
       <a href="/#">{book.author}</a>
       <ul className="book-modify">
@@ -46,7 +46,7 @@ export default SingleBook;
 SingleBook.propTypes = {
   book: PropType.shape({
     id: PropType.number.isRequired,
-    categories: PropType.string.isRequired,
+    category: PropType.string.isRequired,
     title: PropType.string.isRequired,
     author: PropType.string.isRequired,
     completed: PropType.string.isRequired,
