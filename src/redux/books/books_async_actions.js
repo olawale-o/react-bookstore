@@ -29,7 +29,7 @@ export const getBooks = () => (
       });
       dispatch(loadBooks(savedBooks));
     } catch (error) {
-      dispatch(noBooks(error));
+      dispatch(noBooks());
     }
   }
 );

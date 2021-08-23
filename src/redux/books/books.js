@@ -22,9 +22,8 @@ export const loadBooks = (payload) => ({
   payload,
 });
 
-export const noBooks = (payload) => ({
+export const noBooks = () => ({
   type: NO_BOOKS,
-  payload,
 });
 
 const booksReducer = (state = initialState, action) => {
