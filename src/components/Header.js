@@ -14,6 +14,9 @@ const Header = () => (
           <Link to="/categories" className="nav-link">Categories</Link>
         </li>
       </ul>
+      <div className="profile">
+        <i className="bx bxs-user" />
+      </div>
     </nav>
   </header>
 );
