@@ -12,7 +12,7 @@
   text-align: left;
   flex: 2;
 }
-  
+
 .book-category {
   font-size: 1.5rem;
   color: #121212;
@@ -25,24 +25,24 @@
   border-right: 2px solid #e8e8e8;
   padding-right: 5rem;
 }
-  
+
 .book-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.95rem;
   letter-spacing: -0.2px;
   margin: 0.2rem 0;
 }
-  
+
 .book-author {
   font-size: 1.45rem;
   color: #4386bf;
 }
-  
+
 .book-modify {
   display: flex;
   margin-top: 2rem;
 }
-  
+
 .book-modify li {
   margin-right: 2.5rem;
   padding-right: 2rem;
@@ -58,7 +58,7 @@
 .book-modify li button,
 .book-modify li button:visited {
   color: #4386bf;
-  font-size: 1.45;
+  font-size: 1.45rem;
   background: none;
   outline: none;
   border: none;
@@ -84,7 +84,7 @@
   opacity: 0.5;
 }
 
-.book-progress__indicator{
+.book-progress__indicator {
   width: 4.25rem;
   height: 4.25rem;
   border: 5px solid #379cfc;
@@ -92,12 +92,12 @@
   transform: rotate(35deg);
   border-radius: 50%;
 }
-  
+
 .book-chapter {
   text-align: left;
   padding-left: 5rem;
 }
-  
+
 .book-chapter__current {
   font-size: 1.5rem;
   opacity: 0.5;
@@ -105,7 +105,7 @@
   font-weight: 300;
   margin-bottom: 0.5rem;
 }
-  
+
 .book-chapter__number {
   font-size: 1.5rem;
   letter-spacing: -0.4px;
@@ -113,7 +113,7 @@
   font-weight: 300;
   margin-bottom: 2rem;
 }
-  
+
 .btn {
   outline: none;
   border: none;
@@ -126,7 +126,7 @@
   padding: 0.5rem 3rem;
   cursor: pointer;
 }
-  
+
 .btn-progress {
   background: #0290ff;
   color: #fff;
