@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import './AddBook.css';
 import { getStorage } from '../storage/storage';
 import { addBook } from '../redux/books/books_async_actions';
 
@@ -40,19 +41,21 @@ const AddBook = () => {
 
   return (
     <div className="AddBook">
-      <h2>ADD NEW BOOK</h2>
-      <div className="addbook-form">
-        <form onSubmit={onAddBookToStore}>
-          <input type="text" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} required />
-          <select name="category" value={category} onChange={handleChangeCategory} required>
+      <h2 className="heading">ADD NEW BOOK</h2>
+      <form onSubmit={onAddBookToStore}>
+        <div className="addbook-form">
+          <div className="input-field">
+            <input type="text" className="input" name="book-title" value={title} placeholder="Book title" onChange={handleChangeTitle} required />
+          </div>
+          <select name="category" className="select" value={category} onChange={handleChangeCategory} required>
             <option value="">Category</option>
             <option value="Action">Action</option>
             <option value="science-fiction">Science Fiction</option>
             <option value="economy">Economy</option>
           </select>
-          <button type="submit">ADD BOOK</button>
-        </form>
-      </div>
+          <button type="submit" className="btn btn-add">ADD BOOK</button>
+        </div>
+      </form>
     </div>
   );
 };
