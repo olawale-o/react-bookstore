@@ -8,9 +8,10 @@
   margin-bottom: 1.2rem;
 }
 
-.book-summary {
+.book-panel {
   text-align: left;
-  flex: 2;
+  width: 100%;
+  display: flex;
 }
 
 .book-category {
@@ -19,11 +20,24 @@
   opacity: 0.5;
 }
 
-.middle {
+.book-panel__summary {
+  width: 55%;
+}
+
+.book-stats {
   display: flex;
-  justify-content: space-between;
+  width: 45%;
+}
+
+.book-stats__progress {
+  margin: 2rem 0;
+  display: flex;
+}
+
+.divider {
   border-right: 2px solid #e8e8e8;
-  padding-right: 5rem;
+  margin-left: 5rem;
+  margin-right: 4rem;
 }
 
 .book-title {
@@ -31,6 +45,7 @@
   font-size: 1.95rem;
   letter-spacing: -0.2px;
   margin: 0.2rem 0;
+  font-weight: bold;
 }
 
 .book-author {
@@ -85,8 +100,8 @@
 }
 
 .book-progress__indicator {
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 6rem;
+  height: 6rem;
   border: 5px solid #379cfc;
   border-left-color: #e8eee8;
   transform: rotate(35deg);
@@ -95,8 +110,6 @@
 
 .book-chapter {
   text-align: left;
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 
 .book-chapter__current {
