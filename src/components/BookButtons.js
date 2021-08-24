@@ -13,13 +13,13 @@ const BookButtons = ({ id }) => {
 
   return (
     <ul className="book-modify">
-      <li>
+      <li className="btn-item">
         <button type="button">Comments</button>
       </li>
-      <li>
+      <li className="btn-item">
         <button type="button" onClick={() => onRemoveBook(id)}>Remove</button>
       </li>
-      <li>
+      <li className="btn-item">
         <button type="button">Edit</button>
       </li>
     </ul>
