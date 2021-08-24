@@ -8,6 +8,10 @@
 
 # Screenshot
 ![screenshot](https://github.com/olawale-o/react-bookstore/blob/add-styling/src/assets/screenshot.png?raw=true")
+
+# Demo link
+
+Vist [Link](https://hungry-knuth-fec223.netlify.app)
 # Getting started
 ## To get a local copy of this repository kindly follow the steps below.
 - Scroll to top of this current repository
