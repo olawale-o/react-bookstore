@@ -17,7 +17,7 @@ const booksArray = [
     author: 'Frank Herbert',
     percentProgress: '8',
     currentChapter: 'Chapter 3',
-    chapterTitle: 'A Lesson Learned',
+    chapterTitle: '"A Lesson Learned"',
   },
   {
     item_id: `test-${uuidv4()}`,

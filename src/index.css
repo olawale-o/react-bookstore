@@ -20,6 +20,8 @@ body {
 
 a {
   text-decoration: none;
+  color: #121212;
+  opacity: 0.5;
 }
 
 li {
