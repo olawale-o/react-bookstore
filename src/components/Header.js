@@ -8,10 +8,10 @@ const Header = () => (
       <div className="logo">Bookstore CMS</div>
       <ul className="nav-list">
         <li className="nav-item">
-          <NavLink to="/" className="nav-link" activeClassName="active-link" exact>Books</NavLink>
+          <NavLink to="/" className="nav-link" activeClassName="active-link" exact>BOOKS</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/categories" className="nav-link" activeClassName="active-link" exact>Categories</NavLink>
+          <NavLink to="/categories" className="nav-link" activeClassName="active-link" exact>CATEGORIES</NavLink>
         </li>
       </ul>
       <div className="profile">
