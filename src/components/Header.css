@@ -1,0 +1,31 @@
+.Header {
+  margin-bottom: 2.5rem;
+}
+  
+.nav {
+  width: 87.5rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+  
+.logo {
+  font-size: 2.5rem;
+  color: #0290ff;
+  font-weight: 700;
+}
+  
+.nav-list {
+  display: flex;
+  margin-left: 2rem;
+}
+  
+.nav-item {
+  margin-left: 1rem;
+}
+  
+.nav-link {
+  letter-spacing: 1.9px;
+  font-size: 1.5rem;
+}
