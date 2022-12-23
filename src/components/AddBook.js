@@ -34,7 +34,7 @@ const AddBook = () => {
       currentChapter: 'Introduction',
       chapterTitle: '',
     };
-    dispatch(addBook(appId, newBook));
+    dispatch(addBook({ appId, book: newBook }));
     setTitle('');
     setCategory('');
   };

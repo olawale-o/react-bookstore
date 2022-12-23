@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropType from 'prop-types';
 import { deleteSingleBook } from '../redux/books/books_async_actions';
+import { removeBook } from '../redux/books/books';
 import { getStorage } from '../storage/storage';
 
 const BookButtons = ({ id }) => {
@@ -8,7 +9,11 @@ const BookButtons = ({ id }) => {
   const dispatch = useDispatch();
 
   const onRemoveBook = (id) => {
-    dispatch(deleteSingleBook(appId, id));
+    if (id.startsWith('test')) {
+      dispatch(removeBook(id));
+    } else {
+      dispatch(deleteSingleBook({ appId, id }));
+    }
   };
 
   return (
