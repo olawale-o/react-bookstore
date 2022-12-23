@@ -1,8 +1,10 @@
-import { createStore, combineReducers } from 'redux';
-import composedEnhancers from './enhancer';
+import { configureStore } from '@reduxjs/toolkit';
 import booksReducer from './books/books';
 
-const reducer = combineReducers({ books: booksReducer });
-const configureStore = createStore(reducer, composedEnhancers);
+const store = configureStore({
+  reducer: {
+    books: booksReducer,
+  },
+});
 
-export default configureStore;
+export default store;
