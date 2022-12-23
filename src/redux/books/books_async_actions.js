@@ -1,13 +1,13 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
-  createApp, deleteBook, fetchAllBooks, postBook,
+  createApp, fetchAllBooks, deleteBook, postBook,
 } from '../../utils/utils';
-import {
-  createBook, loadBooks, noBooks, removeBook,
-} from './books';
+
 import { getStorage, setStorage } from '../../storage/storage';
 
-export const getBooks = () => (
-  async function getBooks(dispatch) {
+export const getAllBooks = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
     let appId = getStorage();
     try {
       if (!appId) {
@@ -27,31 +27,29 @@ export const getBooks = () => (
           chapterTitle: '',
         };
       });
-      dispatch(loadBooks(savedBooks));
+      return savedBooks;
     } catch (error) {
-      dispatch(noBooks());
+      throw new Error('No books');
     }
-  }
+  },
 );
 
-export const addBook = (appId, book) => (
-  async function addBook(dispatch) {
-    const response = await postBook(appId, book);
-    if (response) {
-      dispatch(createBook(book));
+export const addBook = createAsyncThunk(
+  'books/addBook',
+  async ({ appId, book }) => {
+    const res = await postBook(appId, book);
+    if (res) {
+      return book;
     }
-  }
+    return { };
+  },
 );
 
-export const deleteSingleBook = (appId, id) => (
-  async function deleteSingleBook(dispatch) {
-    if (id.startsWith('test')) {
-      dispatch(removeBook(id));
-    } else {
-      const response = await deleteBook(appId, id);
-      if (response) {
-        dispatch(removeBook(id));
-      }
-    }
-  }
+export const deleteSingleBook = createAsyncThunk(
+  'books/deleteBook',
+  async ({ appId, id }) => {
+    const res = await deleteBook(appId, id);
+    if (res) return id;
+    return null;
+  },
 );
